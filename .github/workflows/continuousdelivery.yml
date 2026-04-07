@@ -70,3 +70,7 @@ jobs:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
         template: "avatar-with-link"
         include-extra: true
+
+  #  - name: Run Discord Webhook
+  #    uses: Sniddl/discord-commits@v1.6
+  
