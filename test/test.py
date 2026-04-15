@@ -1,6 +1,8 @@
 from src.main import *
 from unittest.mock import patch
 
+
+
 def test_root():
     assert root() == {"message": "Estamos Começando"}
 
@@ -14,7 +16,7 @@ def funcaoteste():
 
 def test_create_estudante():
     estudante_teste = Estudante(name="Crystion", curso="ADS", ativo=False)
-    assert estudante_teste == create_estudante()
+    assert estudante_teste == create_estudante(estudante_teste)
 
 
 
