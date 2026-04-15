@@ -46,7 +46,7 @@ jobs:
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov pytest-asyncio
-          PYTHONPATH=. pytest test/ --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          PYTHONPATH=. pytest test/ --doctest-modules --junitxml=junit/test-results.xml --cov=your_module --cov-report=xml --cov-report=html
 
 
 #- name: Test with pytest
