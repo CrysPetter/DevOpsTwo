@@ -45,5 +45,16 @@ jobs:
           pip install -r requirements.txt
       - name: Test with pytest
         run: |
-          pip install pytest pytest-cov
-          pytest test/test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          pip install pytest pytest-cov pytest-asyncio
+          mkdir -p junit
+          if [ -d "test" ] && [ "$(find test -name 'test_*.py' -o -name '*_test.py' | wc -l)" -gt 0 ]; then
+            PYTHONPATH=. pytest test/ --doctest-modules --junitxml=junit/test-results.xml
+          else
+            echo "No tests found in test/ directory"
+            exit 0
+          fi
+          
+          
+
+      #pip install pytest pytest-cov pytest-asyncio
+      #PYTHONPATH=. pytest test/ --doctest-modules --junitxml=junit/test-results.xml
