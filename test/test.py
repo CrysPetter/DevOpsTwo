@@ -2,7 +2,7 @@ from unittest.mock import patch
 import pytest_asyncio
 import pytest
 
-from ..src.main import *
+from src.main import *
 
 
 @pytest.mark.asyncio
